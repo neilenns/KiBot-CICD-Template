@@ -1,11 +1,6 @@
 # KiBot CI/CD template repository
 
-This repository provides a ready-to-go CI/CD workflow for KiCad with GitHub actions. To use this repo hit the _Use this template_ button then follow the steps from GitHub.
-
-**The repository name must exactly match the name of the KiCad project.
-Do not use spaces in either the repository or the project name.**
-
-For everything to work out of the box you should avoid spaces in both the GitHub repository name and the KiCad project name. Use underscores or hyphens instead, for example `TBM930_De-Ice_-_Panel` or `Collins-FMS-3000`.
+This repository provides a ready-to-go CI/CD workflow for KiCad with GitHub actions.
 
 ## Features of this repository template
 
@@ -14,6 +9,26 @@ For everything to work out of the box you should avoid spaces in both the GitHub
    stamping of schematics and PCBs.
 2. KiBot preflighting on every pull request (ERC/DRC checks disabled by default).
 3. VSCode dev container and default build task for easy local testing of KiBot scripts.
+
+## Creating your GitHub repo and KiCad project
+
+To create a KiCad project using this GitHub template:
+
+1. Hit the _Use this template_ button then follow the steps from GitHub to create a copy of the repo. **The repository name must exactly match the name of the KiCad project.
+   Do not use spaces in either the repository or the project name.**
+2. Clone the new repo locally.
+3. Go to _File_ > _New_ > _Project..._ in KiCad.
+4. Name the project the exact same name as the GitHub repository name.
+5. Uncheck the _Create a new directory for this project_ option. **This is very important!**
+6. Save the project into the top level of the folder for the GitHub repository.
+
+Do not use spaces in the GitHub repository or KiCad project name. Use underscores or hyphens instead, for example `TBM930_De-Ice_-_Panel` or `Collins-FMS-3000`.
+
+If you've done all the steps correctly the folder structure will look similar like this:
+
+![image](https://user-images.githubusercontent.com/9524118/141387864-0186e1e1-1664-40d0-ad56-1dc864ee5bc3.png)
+
+Notice that the folder name (which is also the GitHub repo name) and project name are exactly the same and there are no spaces.
 
 ## Documentation generated
 
