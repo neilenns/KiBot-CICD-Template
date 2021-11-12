@@ -31,25 +31,23 @@ outputs:
     options:
       blacklist: "DNF*"
 
-  - name: pcb_top_w
-    comment: "Renders - top (white)"
+  - name: pcb_top_g
+    comment: "Renders - top (green)"
     type: pcbdraw
     dir: "Renders"
     options:
-      output: "%f-white-%i.%x"
+      output: "%f-green-%i.%x"
       format: jpg
-      style: set-white-enig
       show_components: none
       dpi: 600
 
-  - name: pcb_bot_w
-    comment: "Renders - bottom (white)"
+  - name: pcb_bot_g
+    comment: "Renders - bottom (green)"
     type: pcbdraw
     dir: "Renders"
     options:
-      output: "%f-white-%i.%x"
+      output: "%f-green-%i.%x"
       format: jpg
-      style: set-white-enig
       bottom: True
       show_components: none
       dpi: 600
