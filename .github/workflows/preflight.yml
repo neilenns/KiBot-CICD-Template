@@ -1,4 +1,4 @@
-# This workflow runs erc and drc checks on every pull request that touches a scehmatic or PCB file.
+# This workflow runs erc and drc checks on every pull request that touches a schematic or PCB file.
 
 # To use this workflow in your own repo you need to edit the environment variables in the env: section
 # below.

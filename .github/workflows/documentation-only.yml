@@ -1,4 +1,4 @@
-# This workflow generates documentation (PDFs, interactive BOMs, board images). The
+# This workflow generates documentation (PDFs, interactive BOMs, board images).
 # The version number and date of the design is automatically updated in the schematic
 # file and on the PCB. The version number is set via an environment variable
 # and by default is `pre-release` since this runs outside of the release process
