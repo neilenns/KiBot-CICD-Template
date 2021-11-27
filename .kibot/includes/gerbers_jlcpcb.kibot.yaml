@@ -67,7 +67,7 @@ outputs:
   - name: JLCPCB_gerbers
     comment: Gerbers - JLCPCB
     type: gerber
-    dir: JLCPCB
+    dir: gerbers/jlcpcb
     options: &gerber_options
       exclude_edge_layer: true
       exclude_pads_from_silkscreen: true
@@ -85,8 +85,7 @@ outputs:
       line_width: 0.1
       subtract_mask_from_silk: true
     layers:
-      - F.Cu
-      - B.Cu
+      - copper
       - F.SilkS
       - B.SilkS
       - F.Mask
@@ -96,17 +95,17 @@ outputs:
   - name: JLCPCB_drill
     comment: Drill - JLCPCB
     type: excellon
-    dir: JLCPCB
+    dir: gerbers/jlcpcb
     options:
       pth_and_npth_single_file: false
       pth_id: "PTH"
       npth_id: "NPTH"
       metric_units: false
 
-  - name: JLCPCB_position
+  - name: 'https://jlcpcb.com/'
     comment: "Pick and place - JLCPCB"
     type: position
-    dir: JLCPCB
+    dir: gerbers/jlcpcb
     options:
       variant: rotated
       output: "%f_cpl_jlc.%x"
@@ -131,7 +130,7 @@ outputs:
   - name: JLCPCB_bom
     comment: "BOM - JLCPCB"
     type: bom
-    dir: JLCPCB
+    dir: gerbers/jlcpcb
     options:
       output: "%f_%i_jlc.%x"
       exclude_filter: only_jlc_parts
@@ -148,14 +147,3 @@ outputs:
         hide_pcb_info: true
         hide_stats_info: true
         quote_all: true
-
-  - name: JLCPCB
-    comment: "Gerber and drill zip - JLCPCB"
-    type: compress
-    dir: JLCPCB
-    options:
-      files:
-        - from_output: JLCPCB_gerbers
-          dest: /
-        - from_output: JLCPCB_drill
-          dest: /
