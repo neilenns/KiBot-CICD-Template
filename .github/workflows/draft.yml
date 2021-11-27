@@ -24,7 +24,7 @@ jobs:
   Documentation:
     env:
       # Set this to your local timezone. See https://www.wikiwand.com/en/List_of_tz_database_time_zones for valid strings.
-      Timezone: UCT
+      Timezone: UTC
       # Set this to the output folder for all of the generated files. Unless you have a very
       # good reason to change this you should leave it as KiBotOutput.
       OutputFolder: KiBotOutput
@@ -60,7 +60,7 @@ jobs:
         with:
           include: ".*.sch"
           find: "%%date%%"
-          replace: ${{ steps.get_date.outputs.date }}
+          replace: 'date "${{ steps.get_date.outputs.date }}"'
 
       # Do a string replacement in the PCB file to set the version and date.
       # Any instance of %%version%% in the schematic gets replaced with the commit hash.
@@ -72,7 +72,14 @@ jobs:
           find: "%%version%%"
           replace: ${{ steps.get_version.outputs.version }}
 
-      - name: Set PCB date
+      - name: Set PCB date in page settings
+        uses: jacobtomlinson/gha-find-replace@v1
+        with:
+          include: ".*.kicad_pcb"
+          find: "date %%date%%"
+          replace: 'date "${{ steps.get_date.outputs.date }}"'
+
+      - name: Set PCB date on PCB layers
         uses: jacobtomlinson/gha-find-replace@v1
         with:
           include: ".*.kicad_pcb"
