@@ -4,16 +4,17 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "KiBot - Generate release",
+      "label": "KiBot - Draft",
       "type": "shell",
       "command": "kibot",
       "args": [
         "-c",
-        ".kibot/release.kibot.yaml",
+        ".kibot/draft.kibot.yaml",
         "-b",
         "${workspaceFolderBasename}.kicad_pcb",
         "--out-dir",
-        "KiBotOutput"
+        "KiBotOutput",
+        "-v"
       ],
       "group": {
         "kind": "build",

@@ -25,34 +25,16 @@
       "title": "Enabling DRC checks on pull requests"
     },
     {
-      "file": ".kibot/release.kibot.yaml",
-      "description": "This script handles the release file generation. It sets some global variables then imports specific output scripts from the `includes/` folder.",
+      "file": ".kibot/documentation.kibot",
+      "description": "This script handles the documentation files generation. It sets some global variables then imports specific output scripts from the `includes/` folder.",
       "line": 1,
       "title": "Release script"
     },
     {
-      "file": ".kibot/release.kibot.yaml",
-      "description": "To require ERC to pass when creating a release set this to true.",
-      "line": 9,
-      "title": "Enabling ERC checks on releases"
-    },
-    {
-      "file": ".kibot/release.kibot.yaml",
-      "description": "To require DRC to pass when creating a release set this to true.",
-      "line": 10,
-      "title": "Enabling DRC checks on pull requests"
-    },
-    {
-      "file": ".kibot/documentation-only.kibot.yaml",
-      "description": "This script doesn't do ERC or DRC and just generates all the documentation files. It's called from the documentation-only.yaml GitHub action, which is triggered manually from GitHub whenever documentation should be generated.",
+      "file": ".kibot/fabrications.kibot",
+      "description": "This script handles the fabrication files generation. It sets some global variables then imports specific output scripts from the `includes/` folder.",
       "line": 1,
-      "title": "Documentation only script"
-    },
-    {
-      "file": ".kibot/release.kibot.yaml",
-      "description": "These imports are how KiBot knows what outputs to generate. To add support for another fabrication house create a .kibot.yaml file in `includes/` then include it here.",
-      "line": 46,
-      "title": "Importing output definitions"
+      "title": "Release script"
     },
     {
       "directory": ".kibot/includes",
