@@ -15,3 +15,11 @@ preflight:
   ignore_unconnected: false
   # bom generation needs updated xml file
   update_xml: false
+
+  filters:
+    - filter: 'Courtyards overlap'
+      error: '45'
+      regex: 'Courtyards overlap'
+    - filter: 'Footprint has no courtyard defined'
+      error: '46'
+      regex: 'Footprint LOGO'

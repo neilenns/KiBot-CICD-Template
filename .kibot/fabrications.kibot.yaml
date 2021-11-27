@@ -15,6 +15,14 @@ preflight:
   # bom generation needs updated xml file
   update_xml: true
 
+  filters:
+    - filter: 'Courtyards overlap'
+      error: '45'
+      regex: 'Courtyards overlap'
+    - filter: 'Footprint has no courtyard defined'
+      error: '46'
+      regex: 'Footprint LOGO'
+
 global:
   # Sets the default output filename for all generated files. You likely don't have to change this.
   output: "%f-%i_%v.%x"
