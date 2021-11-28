@@ -61,6 +61,8 @@ The following documents are generated on every release build:
    - pcb/
       - PCB front - SVG
       - PCB back - SVG
+   - render
+      - PCB render - PNG
    - Schematic - SVG
 - gerbers - ZIP
 
