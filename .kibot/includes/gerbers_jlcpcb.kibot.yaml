@@ -108,10 +108,10 @@ outputs:
     dir: gerbers/jlcpcb
     options:
       variant: rotated
-      output: "%f_cpl_jlc.%x"
+      output: "%f_cpl.%x"
       format: CSV
       units: millimeters
-      separate_files_for_front_and_back: false
+      separate_files_for_front_and_back: true
       only_smd: true
       columns:
         - id: Ref
@@ -132,7 +132,7 @@ outputs:
     type: bom
     dir: gerbers/jlcpcb
     options:
-      output: "%f_%i_jlc.%x"
+      output: "%f_%i.%x"
       exclude_filter: only_jlc_parts
       ref_separator: ","
       columns:
