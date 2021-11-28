@@ -18,42 +18,63 @@ outputs:
     options:
       output: '%f-%i.%x' #[string='%f-%i%v.%x'] filename for the output SVG (%i=schematic %x=svg). Affected by global options.
 
-  - name: 'print board mechanics'
-    comment: "Print board (PDF)"
-    type: pdf_pcb_print
+  - name: 'print board documentation front'
+    type: 'pdf_pcb_print'
+    dir: 'docs'
+    options:
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill
+      dnf_filter: ''
+      # [string='full'] What to use to indicate the drill places, can be none, small or full (for real scale)
+      drill_marks: 'none'
+      # [boolean=false] Print mirrored (X axis inverted). ONLY for KiCad 6
+      mirror: false
+      # [boolean=false] Print in black and white
+      monochrome: false
+      # [string='%f-%i%v.%x'] Filename for the output PDF (%i=layers, %x=pdf). Affected by global options
+      output: '%f-board_front.%x'
+      # `output_name` is an alias for `output`
+      # [boolean=true] Include the title-block
+      plot_sheet_reference: true
+      # [number=1.0] Scale factor (0 means autoscaling)
+      scaling: 0
+      # [boolean=false] Print layers in separated pages
+      separated: false
+      # [string=''] Board variant to apply
+      variant: ''
     layers:
-      - Dwgs.User
-      - Edge.Cuts
-      - F.CrtYd
-    dir: docs
-    options:
-    #      dnf_filter: [string|list(string)=''] Name of the filter to mark components as not fitted. A short-cut to use for simple cases where a variant is an overkill.
-      drill_marks: full #[string='full'] what to use to indicate the drill places, can be none, small or full (for real scale).
-    #      mirror: [boolean=false] print mirrored (X axis inverted). ONLY for KiCad 6.
-    #      monochrome: [boolean=false] print in black and white.
-      output: '%f-mechanic.%x' #[string='%f-%i%v.%x'] filename for the output PDF (%i=layers, %x=pdf). Affected by global options.
-    #      output_name: Alias for output.
-      plot_sheet_reference: false # [boolean=true] include the title-block.
-      scaling: 0 # [number=1.0] scale factor (0 means autoscaling).
-    #      separated: [boolean=false] print layers in separated pages.
-    #      variant: [string=''] Board variant to apply.
+      - 'F.SilkS'
+      - 'F.Mask'
+      - 'Cmts.User'
+      - 'Edge.Cuts'
 
-  - name: 'print board documentation'
-    comment: "Print board (PDF)"
-    type: pdf_pcb_print
-    layers: 
-      - Edge.Cuts
-      - Cmts.User
-      - F.Fab
-    dir: docs
+  - name: 'print board documentation back'
+    type: 'pdf_pcb_print'
+    dir: 'docs'
     options:
-    #      dnf_filter: [string|list(string)=''] Name of the filter to mark components as not fitted. A short-cut to use for simple cases where a variant is an overkill.
-    #      drill_marks: true #[string='full'] what to use to indicate the drill places, can be none, small or full (for real scale).
-    #      mirror: [boolean=false] print mirrored (X axis inverted). ONLY for KiCad 6.
-    #      monochrome: [boolean=false] print in black and white.
-      output: '%f-documentation.%x' #[string='%f-%i%v.%x'] filename for the output PDF (%i=layers, %x=pdf). Affected by global options.
-    #      output_name: Alias for output.
-      plot_sheet_reference: false # [boolean=true] include the title-block.
-      scaling: 0 # [number=1.0] scale factor (0 means autoscaling).
-    #      separated: [boolean=false] print layers in separated pages.
-    #      variant: [string=''] Board variant to apply.
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill
+      dnf_filter: ''
+      # [string='full'] What to use to indicate the drill places, can be none, small or full (for real scale)
+      drill_marks: 'none'
+      # [boolean=false] Print mirrored (X axis inverted). ONLY for KiCad 6
+      mirror: true
+      # [boolean=false] Print in black and white
+      monochrome: false
+      # [string='%f-%i%v.%x'] Filename for the output PDF (%i=layers, %x=pdf). Affected by global options
+      output: '%f-board_back.%x'
+      # `output_name` is an alias for `output`
+      # [boolean=true] Include the title-block
+      plot_sheet_reference: true
+      # [number=1.0] Scale factor (0 means autoscaling)
+      scaling: 0
+      # [boolean=false] Print layers in separated pages
+      separated: false
+      # [string=''] Board variant to apply
+      variant: ''
+    layers:
+      - 'B.SilkS'
+      - 'B.Mask'
+      - 'Dwgs.User'
+      - 'Edge.Cuts'
+
