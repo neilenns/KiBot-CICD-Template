@@ -15,13 +15,13 @@
     {
       "file": ".kibot/preflight.kibot.yaml",
       "description": "To require ERC to pass during pull requests set this to true.",
-      "line": 10,
+      "line": 32,
       "title": "Enabling ERC checks on pull requests"
     },
     {
       "file": ".kibot/preflight.kibot.yaml",
       "description": "To require DRC to pass on pull requests set this to true.",
-      "line": 11,
+      "line": 33,
       "title": "Enabling DRC checks on pull requests"
     },
     {
@@ -33,13 +33,13 @@
     {
       "file": ".kibot/release.kibot.yaml",
       "description": "To require ERC to pass when creating a release set this to true.",
-      "line": 9,
+      "line": 31,
       "title": "Enabling ERC checks on releases"
     },
     {
       "file": ".kibot/release.kibot.yaml",
       "description": "To require DRC to pass when creating a release set this to true.",
-      "line": 10,
+      "line": 32,
       "title": "Enabling DRC checks on pull requests"
     },
     {
@@ -51,7 +51,7 @@
     {
       "file": ".kibot/release.kibot.yaml",
       "description": "These imports are how KiBot knows what outputs to generate. To add support for another fabrication house create a .kibot.yaml file in `includes/` then include it here.",
-      "line": 46,
+      "line": 52,
       "title": "Importing output definitions"
     },
     {
